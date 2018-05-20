@@ -1,0 +1,67 @@
+//Holds data of friends to match with the user.//
+let friends=[{
+  "name":"Summer",
+  "photo":"../assets/images/summer-457881.jpg",
+  "scores":[
+            3,
+            3,
+            3,
+            3,
+            1,
+            5,
+            3,
+            4,
+            5,
+            5       
+  ]
+},
+{
+  "name":"Winter",
+  "photo":"../assets/images/winter-355411.jpg",
+  "scores":[
+            3,
+            3,
+            3,
+            3,
+            5,
+            1,
+            3,
+            5,
+            1,
+            1 
+  ]
+},
+{
+  "name":"Fall",
+  "photo":"../assets/images/summer-457881.jpg",
+  "scores":[
+            3,
+            3,
+            3,
+            3,
+            1,
+            1,
+            3,
+            4,
+            1,
+            5 
+  ]
+},
+{
+  "name":"Spring",
+  "photo":"../assets/images/spring-414160.jpg",
+  "scores":[
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            4,
+            5,
+            1 
+  ]
+},
+]
+module.exports=friends; //Exports array maiking it accessible via require. 
