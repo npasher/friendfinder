@@ -16,4 +16,4 @@ A POST routes /api/friends. This will be used to handle incoming survey results.
 
 Once the current user's most compatible season is discovered, the result display the name and picture of the closet match as a modal pop-up.
 
-Hosted on Heroku:
+Hosted on Heroku: https://dashboard.heroku.com/apps/immense-anchorage-82565
