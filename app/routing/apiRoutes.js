@@ -11,8 +11,8 @@ module.exports=function(app){
       
       let user=req.body;
       let userAnswers=user["scores[]"].map(parseFloat);
-      const seasonAnswers=friends.map(function(friend){//Seasons scores pulled into an array.//
-        return seasonAnswers
+      let seasonAnswers=friends.map(function(friend){//Seasons scores pulled into an array.//
+        return friend.score
       })
       let answerDifferencesArray=[];
       seasonAnswers.forEach(function(scoring){
