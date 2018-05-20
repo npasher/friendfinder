@@ -12,7 +12,7 @@ module.exports=function(app){
       let user=req.body;
       let userAnswers=user["scores[]"].map(parseFloat);
       let seasonAnswers=friends.map(function(friend){//Seasons scores pulled into an array.//
-        return friend.score
+        return friend.scores
       })
       let answerDifferencesArray=[];
       seasonAnswers.forEach(function(scoring){
