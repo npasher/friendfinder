@@ -11,38 +11,39 @@ module.exports=function(app){
       
       let user=req.body;
       let userAnswers=user["scores[]"].map(parseFloat);
-      let seasonAnswers=friends.map(function(friends){//Seasons scores pulled into an array.//
-        return friends.scores
+
+      let seasonAnswers=friends.map(function(friend){//Seasons scores pulled into an array.//
+        return friend.scores
       })
       let answerDifferencesArray=[];
       seasonAnswers.forEach(function(scoring){
-        let difference=[];
+        let differences=[];
+
         scoring.forEach(function(score,index){
-          let differenceMargin=userAnswers[index]-score;//Difference between user's & season's score.//
-          difference.push(Math.abs(differenceMargin));//Absolute value of difference.//
+          let scoreDifference=userAnswers[index]-score;//Difference between user's & season's score.//
+          differences.push(Math.abs(scoreDifference));//Absolute value of difference.//
         })
-        calculatedDifference=difference.reduce(function(total,score){
+        calcDifference=differences.reduce(function(total,score){
           return total+score
         })
-        answerDifferencesArray.push(calculatedDifference);//Newly built array of arrays that maps each user in the friend list.//
+        answerDifferencesArray.push(calcDifference);//Newly built array of arrays that maps each user in the friend list.//
       })
       console.log(answerDifferencesArray);
       friends.push(user);
 
-      function findClosestFriend(array){//Obtains lowest score difference.//
+      function getLowest(array){//Obtains lowest score difference.//
         return array.reduce(function(a,b){
           return Math.min(a,b);
         });
       }
       //Variables that store lowest score and the index of best match//
-      let lowestScore=findClosestFriend(answerDifferencesArray);
+      let lowestScore=getLowest(answerDifferencesArray);
       let bestMatch=answerDifferencesArray.indexOf(lowestScore);
       
       console.log("Lowest Score: "+ lowestScore);
       console.log("Best Match Index: "+bestMatch);
-      console.log("The Best Season Match is: "+friends[bestMatch].name+"!");
+      console.log("The Best Season Match: "+friends[bestMatch].name);
 
       res.json(friends[bestMatch]);//Returning friends object as JSON.//
-
   });
 };
