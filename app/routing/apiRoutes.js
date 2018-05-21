@@ -16,15 +16,16 @@ module.exports=function(app){
         return friend.scores
       })
       let answerDifferencesArray=[];
-      seasonAnswers.forEach(function(scoring){
+      
+      seasonAnswers.forEach(function(userScoring){
         let differences=[];
 
-        scoring.forEach(function(score,index){
+        userScoring.forEach(function(score,index){
           let scoreDifference=userAnswers[index]-score;//Difference between user's & season's score.//
           differences.push(Math.abs(scoreDifference));//Absolute value of difference.//
         })
-        calcDifference=differences.reduce(function(total,score){
-          return total+score
+        calcDifference=differences.reduce(function(sum,score){
+          return sum+score
         })
         answerDifferencesArray.push(calcDifference);//Newly built array of arrays that maps each user in the friend list.//
       })
@@ -46,4 +47,4 @@ module.exports=function(app){
 
       res.json(friends[bestMatch]);//Returning friends object as JSON.//
   });
-};
+}
