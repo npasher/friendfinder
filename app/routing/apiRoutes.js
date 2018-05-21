@@ -11,15 +11,15 @@ module.exports=function(app){
       
       let user=req.body;
       let userAnswers=user["scores[]"].map(parseFloat);
-      let seasonAnswers=friends.map(function(friend){//Seasons scores pulled into an array.//
-        return friend.scores
+      let seasonAnswers=friends.map(function(friends){//Seasons scores pulled into an array.//
+        return friends.scores
       })
       let answerDifferencesArray=[];
       seasonAnswers.forEach(function(scoring){
         let difference=[];
         scoring.forEach(function(score,index){
           let differenceMargin=userAnswers[index]-score;//Difference between user's & season's score.//
-          difference.push(Masth.abs(differenceMargin));//Absolute value of difference.//
+          difference.push(Math.abs(differenceMargin));//Absolute value of difference.//
         })
         calculatedDifference=difference.reduce(function(total,score){
           return total+score
@@ -35,7 +35,7 @@ module.exports=function(app){
         });
       }
       //Variables that store lowest score and the index of best match//
-      let lowestScore=arrayMin(answerDifferencesArray);
+      let lowestScore=findClosestFriend(answerDifferencesArray);
       let bestMatch=answerDifferencesArray.indexOf(lowestScore);
       
       console.log("Lowest Score: "+ lowestScore);

@@ -1,7 +1,7 @@
 //Holds data of friends to match with the user.//
 let friends=[{
   "name":"Summer",
-  "photo":"../assets/images/summer-457881.jpg",
+  "photo":"https://interfacelift.com/wallpaper/D4d5710a/03791_summerlight_1024x640.jpg",
   "scores":[
             3,
             3,
@@ -17,7 +17,7 @@ let friends=[{
 },
 {
   "name":"Winter",
-  "photo":"../assets/images/winter-355411.jpg",
+  "photo":"https://interfacelift.com/wallpaper/D6728a6e/02119_deepsilence_1024x600.jpg",
   "scores":[
             3,
             3,
@@ -33,7 +33,7 @@ let friends=[{
 },
 {
   "name":"Fall",
-  "photo":"../assets/images/summer-457881.jpg",
+  "photo":"https://interfacelift.com/wallpaper/D4d5710a/00388_fallintennessee_1024x768.jpg",
   "scores":[
             3,
             3,
@@ -49,7 +49,7 @@ let friends=[{
 },
 {
   "name":"Spring",
-  "photo":"../assets/images/spring-414160.jpg",
+  "photo":"https://interfacelift.com/wallpaper/D3649797/02168_springnature_1024x768.jpg",
   "scores":[
             3,
             3,
